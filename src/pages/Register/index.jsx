@@ -1,18 +1,18 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {auth} from '../../firebaseConnection';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import './register.css'
-async function Home() {
+ function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     
-    function handleLogin(e){
+  async  function handleRegister(e){
       e.preventDefault();
       if(email !== '' && password !==''){
-       await signInWithEmailAndPassword(auth,email,password)
+       await createUserWithEmailAndPassword(auth,email,password)
        .then(()=>{
         //navegar para /admin
         navigate('/admin',{replace:true})
