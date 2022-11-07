@@ -32,7 +32,7 @@ import './register.css'
       <div className='home-container'>
       <h1>Cadastre-se</h1>
       <span>vamos criar a sua conta.</span>
-      <form className='form' onSubmit={handleLogin}>
+      <form className='form' onSubmit={handleRegister}>
       <input type='email' placeholder='seuemail@server.com'
       value={email} onChange={(e)=>setEmail(e.target.value)}/> <br/>
       <input type='password' placeholder='******'
