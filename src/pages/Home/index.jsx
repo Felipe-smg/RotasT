@@ -4,12 +4,12 @@ import {auth} from '../../firebaseConnection';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import './home.css'
-async function Home() {
+ function Home() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     
-    function handleLogin(e){
+  async  function handleLogin(e){
        e.preventDefault();
        if(email !== '' && password !==''){
         await signInWithEmailAndPassword(auth,email,password)
